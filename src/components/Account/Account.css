@@ -1,0 +1,23 @@
+.account {
+  display: flex;
+  flex-direction: row;
+  column-gap: 7px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account__account {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px;
+}
+
+.account__icon {
+  width: 11.4px;
+  height: 11.7px;
+  padding: 7.75px 7.81px 7.58px;
+  flex-shrink: 0;
+  margin-right: 3px;
+}

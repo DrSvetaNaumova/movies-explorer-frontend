@@ -1,0 +1,29 @@
+.bottom__question-link-container {
+  display: flex;
+  margin-top: 16px;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media screen and (max-width: 400px) {
+  .bottom__question-link-container {
+    font-size: 12px;
+    margin-top: 14px;
+    gap: 7px;
+  }
+}
+
+.bottom__question {
+  color: #8b8b8b;
+}
+
+.bottom__link {
+  color: #4285f4;
+  text-decoration: none;
+}

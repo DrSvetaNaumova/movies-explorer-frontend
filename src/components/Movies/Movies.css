@@ -1,0 +1,37 @@
+.movies__show-more-container {
+  margin: 0;
+  padding: 61px 0 105px 0;
+  display: flex;
+  align-self: center;
+}
+
+@media screen and (max-width: 900px) {
+  .movies__show-more-container {
+    padding: 60px 0 137px 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .movies__show-more-container {
+    padding: 62px 0 156px 0;
+  }
+}
+
+.movies__show-more-button {
+  width: 320px;
+  text-align: center;
+  padding: 9px 0;
+  border-radius: 6px;
+  background: #2f2f2f;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .movies__show-more-button {
+    width: 240px;
+  }
+}
