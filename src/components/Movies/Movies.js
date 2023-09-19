@@ -4,19 +4,19 @@ import './Movies.css';
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-// import Preloader from '../Preloader/Preloader';
 import Footer from '../Footer/Footer';
 
 function Movies() {
   return (
     <>
       <Header loggedIn={true} headerClassName={'header'} />
-      <SearchForm />
-      <MoviesCardList />
-      <div className="movies__show-more-container">
-        <div className="movies__show-more-button">Ещё</div>
-      </div>
-      {/* <Preloader /> */}
+      <main className="main-movies">
+        <SearchForm />
+        <MoviesCardList />
+        <div className="show-more">
+          <button className="show-more__button" type='button'>Ещё</button>
+        </div>
+      </main>
       <Footer />
     </>
   );

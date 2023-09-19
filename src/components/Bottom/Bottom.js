@@ -7,7 +7,7 @@ function Bottom({ type }) {
   return type === 'register' ? (
     <>
       <BottomButton title={'Зарегистрироваться'} statusActive={true} />
-      <div className="bottom__question-link-container">
+      <div className="bottom">
         <div className="bottom__question">Уже зарегистрированы?</div>
         <a className="bottom__link" href="http://localhost:3000/signin">
           Войти
@@ -17,7 +17,7 @@ function Bottom({ type }) {
   ) : (
     <>
       <BottomButton title={'Войти'} statusActive={true} />
-      <div className="bottom__question-link-container">
+      <div className="bottom">
         <div className="bottom__question">Еще не зарегистрированы?</div>
         <a className="bottom__link" href="http://localhost:3000/signup">
           Регистрация

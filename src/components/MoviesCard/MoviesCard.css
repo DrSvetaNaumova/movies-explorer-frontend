@@ -57,21 +57,16 @@
 }
 
 .movies__icon_type_like-white {
-  background-image: url('./../../images/diploma-like-white.png');
+  background-image: url('./../../images/diploma-like-white.svg');
 }
 
 .movies__icon_type_like-red {
-  background-image: url('./../../images/diploma-like-red.png');
+  background-image: url('./../../images/diploma-like-red.svg');
 }
 
 .movies__icon_type_delete {
   display: none;
 }
-
-/* .movies__icon_type_delete_active {
-  display: block;
-  background-image: url('./../../images/diploma-film-delete-icon.svg');
-} */
 
 .movies__duration {
   padding-top: 6px;

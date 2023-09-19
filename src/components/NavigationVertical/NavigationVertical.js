@@ -44,6 +44,7 @@ function NavigationVertical({
         <Account />
         <button
           className="navigation-vertical__close-button"
+          type="button"
           onClick={closeNavigationVertical}
         ></button>
       </div>

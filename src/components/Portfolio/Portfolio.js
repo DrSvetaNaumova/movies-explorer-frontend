@@ -1,5 +1,5 @@
 import React from 'react';
-import arrow from './../../images/diploma-arrow.png';
+import arrow from './../../images/diploma-arrow-icon.svg';
 import './Portfolio.css';
 
 function Portfolio() {

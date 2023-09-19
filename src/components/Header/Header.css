@@ -31,7 +31,7 @@
   height: 44px;
   border: none;
   background-color: transparent;
-  background-image: url('./../../images/diploma-burger-big.png');
+  background-image: url('./../../images/diploma-burger-big.svg');
 }
 
 @media screen and (max-width: 768px) {
@@ -44,13 +44,14 @@
   .header__burger {
     width: 40px;
     height: 43px;
-    background-image: url('./../../images/diploma-burger-small.png');
+    background-image: url('./../../images/diploma-burger-small.svg');
   }
 }
 
 .header__authorization {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 30px;
 }
 
@@ -63,7 +64,7 @@
 .header__registration {
   margin: 0;
   padding: 0;
-  border: none;
+  text-decoration: none;
   color: #fff;
   background-color: transparent;
   font-size: 12px;
@@ -82,6 +83,7 @@
 .header__login {
   margin: 0;
   padding: 8px 20px;
+  text-decoration: none;
   border: none;
   border-radius: 3px;
   color: #000;

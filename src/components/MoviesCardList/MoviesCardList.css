@@ -5,6 +5,8 @@
 }
 
 .movies__container {
+  list-style: none;
+  margin: 0;
   padding: 70px 70px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, 270px);

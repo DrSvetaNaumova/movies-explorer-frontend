@@ -1,4 +1,10 @@
-.movies__show-more-container {
+.main-movies {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.show-more {
   margin: 0;
   padding: 61px 0 105px 0;
   display: flex;
@@ -6,22 +12,25 @@
 }
 
 @media screen and (max-width: 900px) {
-  .movies__show-more-container {
+  .show-more {
     padding: 60px 0 137px 0;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .movies__show-more-container {
+  .show-more {
     padding: 62px 0 156px 0;
   }
 }
 
-.movies__show-more-button {
+.show-more__button {
   width: 320px;
   text-align: center;
+  margin: 0 auto;
   padding: 9px 0;
+  border: 0;
   border-radius: 6px;
+  color: #fff;
   background: #2f2f2f;
   font-size: 12px;
   font-style: normal;
@@ -31,7 +40,7 @@
 }
 
 @media screen and (max-width: 400px) {
-  .movies__show-more-button {
+  .show-more__button {
     width: 240px;
   }
 }

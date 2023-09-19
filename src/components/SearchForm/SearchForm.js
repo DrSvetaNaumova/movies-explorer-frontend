@@ -2,15 +2,16 @@ import React from 'react';
 import './SearchForm.css';
 
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
-import loop from './../../images/diploma-film-search-icon.png';
+import loop from './../../images/diploma-movies-loop.svg';
 
 function SearchForm() {
   return (
-    <>
-      <section className="search">
-        <div className="search__container">
-          <img className="search__loop" src={loop} alt="значок лупы" />
-          <form className="search__form">
+    <section className='search'>
+      <div className="search__container">
+        <form className="search__form">
+          <div className="search__form-content">
+            <img className="search__loop" src={loop} alt="значок лупы" />
+
             <input
               className="search__input"
               required
@@ -22,14 +23,15 @@ function SearchForm() {
             <button type="submit" className="search__form-button">
               Найти
             </button>
-          </form>
-          <div className="search__spacer"></div>
-        </div>
-        <FilterCheckbox filterCheckboxData={true} />
-      </section>
+            <div className="search__spacer"></div>
+          </div>
+
+          <FilterCheckbox filterCheckboxData={true} />
+        </form>
+      </div>
 
       <div className="search__bottom"></div>
-    </>
+    </section>
   );
 }
 

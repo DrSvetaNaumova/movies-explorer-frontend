@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './Account.css';
-import profile from './../../images/diploma-profile.png';
+import profile from './../../images/diploma-profile-icon.svg';
 
 function Account() {
   const navigate = useNavigate();

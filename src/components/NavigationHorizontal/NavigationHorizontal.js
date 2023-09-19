@@ -8,7 +8,7 @@ function NavigationHorizontal() {
   const navigate = useNavigate();
   return (
     <section className="navigation-horizontal">
-      <div className="navigation-horizontal__movies-container">
+      <nav className="navigation-horizontal__movies-container">
         <a
           className="navigation-horizontal__movies"
           href="http://localhost:3000/movies"
@@ -23,7 +23,7 @@ function NavigationHorizontal() {
         >
           Сохраненные фильмы
         </a>
-      </div>
+      </nav>
       <Account />
     </section>
   );

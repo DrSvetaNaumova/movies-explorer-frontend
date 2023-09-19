@@ -1,11 +1,12 @@
 import React from 'react';
+import './Register.css';
 
 import FormContainer from '../FormContainer/FormContainer';
 import Input from '../Input/Input';
 
 function Register() {
   return (
-    <>
+    <main className="register">
       <FormContainer type={'register'} title={'Добро пожаловать!'}>
         <Input
           label={'Имя'}
@@ -13,6 +14,8 @@ function Register() {
           name={'name'}
           type={'text'}
           placeholder={'Светлана'}
+          minLength="2"
+          maxLength="30"
         />
 
         <Input
@@ -27,10 +30,12 @@ function Register() {
           id={'password'}
           name={'password'}
           type={'password'}
-          placeholder={''}
+          placeholder={'Пароль'}
+          minLength="6"
+          maxLength="20"
         />
       </FormContainer>
-    </>
+    </main>
   );
 }
 

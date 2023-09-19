@@ -1,4 +1,4 @@
-.bottom__question-link-container {
+.bottom {
   display: flex;
   margin-top: 16px;
   gap: 6px;
@@ -12,10 +12,10 @@
 }
 
 @media screen and (max-width: 400px) {
-  .bottom__question-link-container {
-    font-size: 12px;
+  .bottom {
     margin-top: 14px;
     gap: 7px;
+    font-size: 12px;
   }
 }
 

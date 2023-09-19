@@ -2,6 +2,12 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+.page-404__section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   justify-content: space-between;
   padding: 245px 0 60px;
   margin: 0 auto;
@@ -30,7 +36,7 @@
 .page-404__back {
   margin: 0 auto;
   padding: 0;
-  border: 0;
+  text-decoration: none;
   color: #4285f4;
   background-color: transparent;
   font-size: 14px;
@@ -40,13 +46,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .page-404 {
+  .page-404__section {
     padding: 407px 0 222px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .page-404 {
+  .page-404__section {
     padding: 329px 0 30px;
   }
 

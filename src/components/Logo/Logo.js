@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './Logo.css';
-import logo from './../../images/diploma-logo.png';
+import logo from './../../images/diploma-logo.svg';
 
 function Logo() {
   const navigate = useNavigate();

@@ -29,6 +29,7 @@ function Header({ loggedIn, headerClassName }) {
           <NavigationHorizontal />
           <button
             className="header__burger"
+            type="button"
             onClick={openNavigationVertical}
           ></button>
         </header>
@@ -43,20 +44,22 @@ function Header({ loggedIn, headerClassName }) {
       <>
         <header className={headerClassName}>
           <Logo />
-          <div className="header__authorization">
-            <button
+          <nav className="header__authorization">
+            <a
+              href="http://localhost:3000/signup"
               className="header__registration"
               onClick={() => navigate('/signup')}
             >
               Регистрация
-            </button>
-            <button
+            </a>
+            <a
+              href="http://localhost:3000/signin"
               className="header__login"
               onClick={() => navigate('/signin')}
             >
               Войти
-            </button>
-          </div>
+            </a>
+          </nav>
         </header>
       </>
     );

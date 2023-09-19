@@ -1,17 +1,11 @@
 import React from 'react';
 import './FilterCheckbox.css';
-import filterActive from './../../images/diploma-film-filter-icon-active.png';
-import filterInactive from './../../images/diploma-film-filter-icon-inactive.png';
 
-function FilterCheckbox({ filterCheckboxData }) {
+function FilterCheckbox() {
   return (
-    <div className="filter__container">
-      <img
-        className="filter__icon"
-        src={`${filterCheckboxData === true ? filterActive : filterInactive}`}
-        alt="фильтр"
-      />
-      <div className="filter__shorts">Короткометражки</div>
+    <div className="checkbox">
+<input className="checkbox__input" type="checkbox" id="switch" /><label className="checkbox__label" htmlFor="switch"></label>
+      <div className="checkbox__shorts">Короткометражки</div>
     </div>
   );
 }
