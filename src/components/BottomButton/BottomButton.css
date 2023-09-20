@@ -1,0 +1,42 @@
+.bottom-button {
+  border: 0;
+  border-radius: 3px;
+  width: 100%;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+  background: #4285f4;
+  cursor: pointer;
+}
+
+.bottom-button_inactive {
+  border: 0;
+  border-radius: 3px;
+  width: 100%;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #c2c2c2;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+.bottom-button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 400px) {
+  .bottom-button {
+    padding-top: 15px;
+    font-size: 12px;
+  }
+}

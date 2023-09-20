@@ -1,0 +1,105 @@
+.promo {
+  display: flex;
+  flex-direction: column;
+  background-color: #073042;
+  padding: 0 70px;
+}
+
+@media screen and (max-width: 768px) {
+  .promo {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .promo {
+    padding: 0;
+  }
+}
+
+.promo__logo {
+  display: flex;
+  align-self: self-end;
+  position: relative;
+  width: 63.33%;
+  max-width: 722px;
+  color: #fff;
+  margin: 73px 0 60px;
+  background: url('./../../images/diploma-promo-logo.svg');
+  height: 244px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+@media screen and (max-width: 800px) {
+  .promo__logo {
+    align-self: center;
+    width: 100%;
+    height: 230px;
+    max-width: 680px;
+    margin: 114px 0 66px;
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .promo__logo {
+    background-size: cover;
+    margin: 41px 0 40px;
+  }
+}
+
+/* .promo__logo {
+  display: flex;
+  align-self: self-end;
+  position: relative;
+  width: 63.33%;
+  max-width: 722px;
+  color: #fff;
+  margin: 74px 0 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .promo__logo {
+    align-self: center;
+    width: 100%;
+    max-width: 680px;
+    margin: 114px 0 66px;
+  }
+}
+
+/* @media screen and (max-width: 400px) {
+  .promo__logo {
+    width: 232%;
+    margin: 41px 0 40px;
+  }
+}*/
+
+.promo__title {
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  max-width: 520px;
+}
+
+@media screen and (max-width: 768px) {
+  .promo__title {
+    margin-top: 300px;
+    align-self: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .promo__title {
+    margin-top: 182px;
+    font-size: 31px;
+    font-style: normal;
+    line-height: 39px;
+    letter-spacing: -1.24px;
+  }
+}

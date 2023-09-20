@@ -1,0 +1,95 @@
+.navigation-vertical {
+  display: none;
+}
+
+.navigation-vertical_opened {
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(32, 32, 32, 0.3);
+  z-index: 2;
+}
+
+.navigation-vertical__links-account-container {
+  margin: 0;
+  padding: 136px 0 92px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 67.7%;
+  background-color: rgba(32, 32, 32, 1);
+  opacity: 1;
+  z-index: 3;
+}
+
+.navigation-vertical__links-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.navigation-vertical__link {
+  color: #fff;
+  text-decoration: none;
+  padding: 25px 0 4px;
+}
+
+.navigation-vertical__link_active {
+  border: 0;
+  border-bottom: 2px solid #fff;
+  padding: 23px 0 4px;
+}
+
+.navigation-vertical__close-button {
+  position: absolute;
+  top: 23px;
+  right: 26px;
+  background-image: url('./../../images/diploma-close-icon.svg');
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  width: 27px;
+  height: 29px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .navigation-vertical {
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    left: 0;
+  }
+
+  .navigation-vertical__links-account-container {
+    padding: 125px 0 49px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .navigation-vertical__link {
+    padding: 19px 0 6px;
+  }
+
+  .navigation-vertical__close-button {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+  }
+}
