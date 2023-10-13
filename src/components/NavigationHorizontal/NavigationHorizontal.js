@@ -1,28 +1,23 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './NavigationHorizontal.css';
 import Account from '../Account/Account';
 
 function NavigationHorizontal() {
-  const navigate = useNavigate();
   return (
     <section className="navigation-horizontal">
       <nav className="navigation-horizontal__movies-container">
-        <a
+        <Link to="/movies"
           className="navigation-horizontal__movies"
-          href="http://localhost:3000/movies"
-          onClick={() => navigate('/movies')}
         >
           Фильмы
-        </a>
-        <a
+        </Link>
+        <Link to="/saved-movies"
           className="navigation-horizontal__saved-movies"
-          href="http://localhost:3000/saved-movies"
-          onClick={() => navigate('/saved-movies')}
         >
           Сохраненные фильмы
-        </a>
+        </Link>
       </nav>
       <Account />
     </section>

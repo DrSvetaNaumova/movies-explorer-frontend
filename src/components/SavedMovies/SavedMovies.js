@@ -3,28 +3,42 @@ import './SavedMovies.css';
 
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
-import MoviesCard from '../MoviesCard/MoviesCard';
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
 
-function SavedMovies() {
+function SavedMovies({
+  loggedIn,
+  savedMovies,
+  deleteMovie,
+  checkIfMovieWasSaved,
+  filter,
+  word,
+  setKeyWordString,
+  onlyShorts,
+  onlyShortsCheckbox,
+  setSearchWasDone,
+  searchWasDone,
+  filteredSavedMovies
+}) {
   return (
     <>
-      <Header loggedIn={true} headerClassName={'header'} />
+      <Header loggedIn={loggedIn} headerClassName={'header'} />
       <main className="main-saved-movies">
-        <SearchForm />
-        <section className="saved-movies">
-          <ul className="saved-movies__container">
-            <li>
-              <MoviesCard type={'saved'} />
-            </li>
-            <li>
-              <MoviesCard type={'saved'} />
-            </li>
-            <li>
-              <MoviesCard type={'saved'} />
-            </li>
-          </ul>
-        </section>
+        <SearchForm
+          filter={filter}
+          word={word}
+          setKeyWordString={setKeyWordString}
+          onlyShorts={onlyShorts}
+          onlyShortsCheckbox={onlyShortsCheckbox}
+          setSearchWasDone={setSearchWasDone}
+        />
+        <MoviesCardList
+          savedMovies={savedMovies}
+          deleteMovie={deleteMovie}
+          checkIfMovieWasSaved={checkIfMovieWasSaved}
+          filteredSavedMovies={filteredSavedMovies}
+          searchWasDone={searchWasDone}
+        />
       </main>
       <Footer />
     </>

@@ -50,32 +50,6 @@
   }
 }
 
-/* .promo__logo {
-  display: flex;
-  align-self: self-end;
-  position: relative;
-  width: 63.33%;
-  max-width: 722px;
-  color: #fff;
-  margin: 74px 0 60px;
-}
-
-@media screen and (max-width: 768px) {
-  .promo__logo {
-    align-self: center;
-    width: 100%;
-    max-width: 680px;
-    margin: 114px 0 66px;
-  }
-}
-
-/* @media screen and (max-width: 400px) {
-  .promo__logo {
-    width: 232%;
-    margin: 41px 0 40px;
-  }
-}*/
-
 .promo__title {
   margin-top: 50px;
   font-size: 40px;

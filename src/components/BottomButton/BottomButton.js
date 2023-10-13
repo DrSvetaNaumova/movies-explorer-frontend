@@ -1,10 +1,12 @@
 import React from 'react';
 import './BottomButton.css';
 
-function BottomButton({ title, statusActive }) {
+function BottomButton({ title, isInactive }) {
   return (
     <button
-      className={`${statusActive ? 'bottom-button' : 'bottom-button_inactive'}`} type='submit'
+      className={isInactive ? 'bottom-button_inactive' : 'bottom-button'}
+      type="submit"
+      disabled={isInactive}
     >
       {title}
     </button>

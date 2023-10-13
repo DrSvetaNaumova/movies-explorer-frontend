@@ -13,6 +13,7 @@
   column-gap: 20px;
   row-gap: 37px;
   justify-content: center;
+  align-items: baseline;
 }
 
 @media screen and (max-width: 900px) {
@@ -30,4 +31,10 @@
     grid-template-columns: repeat(auto-fill, 300px);
     row-gap: 34px;
   }
+}
+
+.movies__not-found {
+  align-self: center;
+  color: red;
+  padding: 0 70px;
 }

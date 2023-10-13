@@ -1,7 +1,19 @@
 import React from 'react';
 import './Input.css';
 
-function Input({label, id, name, type, placeholder}) {
+function Input({
+  label,
+  id,
+  name,
+  type,
+  placeholder,
+  value,
+  minLength,
+  maxLength,
+  error,
+  onChange,
+  pattern,
+}) {
   return (
     <>
       <div className="input">
@@ -13,9 +25,15 @@ function Input({label, id, name, type, placeholder}) {
           name={name}
           type={type}
           placeholder={placeholder}
+          value={value}
+          minLength={minLength}
+          maxLength={maxLength}
+          error={error}
+          onChange={onChange}
+          pattern={pattern}
         />
-        <span className="input__error">
-          Что-то пошло не так...
+        <span className={!error ? 'input__error' : 'input__error_visible'}>
+          {error}
         </span>
       </div>
     </>

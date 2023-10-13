@@ -80,7 +80,3 @@
 .checkbox__input:checked + .checkbox__label {
   background: #343434;
 }
-
-.checkboxlabel:active:after {
-  width: 130px;
-}

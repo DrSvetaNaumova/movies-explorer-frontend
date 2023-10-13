@@ -5,17 +5,50 @@ import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
+import Preloader from '../Preloader/Preloader';
 
-function Movies() {
+function Movies({
+  loggedIn,
+  movies,
+  foundMovies,
+  filter,
+  word,
+  setKeyWordString,
+  onlyShorts,
+  onlyShortsCheckbox,
+  loading,
+  savedMovies,
+  saveMovie,
+  deleteMovie,
+  checkIfMovieWasSaved,
+  searchWasDone,
+  setSearchWasDone
+}) {
   return (
     <>
-      <Header loggedIn={true} headerClassName={'header'} />
+      <Header loggedIn={loggedIn} headerClassName={'header'} />
       <main className="main-movies">
-        <SearchForm />
-        <MoviesCardList />
-        <div className="show-more">
-          <button className="show-more__button" type='button'>Ещё</button>
-        </div>
+        <SearchForm
+          filter={filter}
+          word={word}
+          setKeyWordString={setKeyWordString}
+          onlyShorts={onlyShorts}
+          onlyShortsCheckbox={onlyShortsCheckbox}
+          setSearchWasDone={setSearchWasDone}
+        />
+        {loading ? (
+          <Preloader />
+        ) : (
+          <MoviesCardList
+            movies={movies}
+            foundMovies={foundMovies}
+            saveMovie={saveMovie}
+            savedMovies={savedMovies}
+            deleteMovie={deleteMovie}
+            checkIfMovieWasSaved={checkIfMovieWasSaved}
+            searchWasDone={searchWasDone}
+          />
+        )}
       </main>
       <Footer />
     </>

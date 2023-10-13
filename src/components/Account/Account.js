@@ -7,7 +7,7 @@ import profile from './../../images/diploma-profile-icon.svg';
 function Account() {
   const navigate = useNavigate();
   return (
-    <div className="account" onClick={() => navigate('/profile')}>
+    <div className="account" onClick={() => {navigate('/profile')}}>
       <div className="account__account">Аккаунт</div>
       <img className="account__icon" src={profile} alt="логотип-человек" />
     </div>

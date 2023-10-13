@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './AboutMe.css';
 
 import photo from './../../images/diploma-photo-2023.jpg';
@@ -18,13 +19,13 @@ function AboutMe() {
             работала в сфере клинических исследований лекарственных средств. У
             меня есть муж и два взрослых сына.
           </p>
-          <a
-            href="https://github.com/DrSvetaNaumova"
+          <Link
+            to="https://github.com/DrSvetaNaumova"
             rel="noreferrer"
             target="_blank"
           >
             <p className="about-me__github">Github</p>
-          </a>
+          </Link>
         </div>
         <img
           className="about-me__photo"
