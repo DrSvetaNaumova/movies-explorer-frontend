@@ -15,11 +15,10 @@ class Api {
   }
 
   // получить массив фильмов с сервера
-  getMovies(token) {
+  getMovies() {
     const promise = fetch(this._baseUrl, {
       headers: {
         ...this._headers,
-        Authorization: `Bearer ${token}`,
       },
     })
       .then(this._checkResponse)
