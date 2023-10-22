@@ -7,6 +7,7 @@ import { useFormWithValidation } from '../../utils/useFormWithValidation';
 
 function SearchForm({
   word,
+  keyWordString,
   setKeyWordString,
   filter,
   onlyShorts,
@@ -49,7 +50,7 @@ function SearchForm({
               placeholder="Фильм"
               minLength="1"
               maxLength="10"
-              value={values.keyWord || ''}
+              defaultValue={keyWordString || ''}
               onChange={handleChange}
             />
 

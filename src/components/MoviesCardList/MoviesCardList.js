@@ -22,11 +22,11 @@ function MoviesCardList({
   keyWordString,
   foundMovies,
   savedMovies,
+  filteredSavedMovies,
   saveMovie,
   deleteMovie,
   checkIfMovieWasSaved,
   searchWasDone,
-  filteredSavedMovies,
 }) {
   const location = useLocation();
   const screenWidth = useScreenWidth();
@@ -115,7 +115,7 @@ function MoviesCardList({
       );
     }
   } else if (location.pathname === '/saved-movies') {
-    if (savedMovies.length > 0) {
+    if (!searchWasDone && savedMovies.length > 0) {
       return (
         <section className="movies">
           <ul className="movies__container">
@@ -138,6 +138,25 @@ function MoviesCardList({
       return (
         <section className="movies">
           <span className="movies__not-found">Ничего не найдено.</span>
+        </section>
+      );
+    } else if (searchWasDone && filteredSavedMovies.length > 0) {
+      return (
+        <section className="movies">
+          <ul className="movies__container">
+            {filteredSavedMovies.map((movie) => (
+              <li key={movie.movieId}>
+                {' '}
+                <MoviesCard
+                  movie={movie}
+                  filteredSavedMovies={filteredSavedMovies}
+                  saveMovie={saveMovie}
+                  deleteMovie={deleteMovie}
+                  checkIfMovieWasSaved={checkIfMovieWasSaved}
+                />
+              </li>
+            ))}
+          </ul>
         </section>
       );
     }

@@ -13,6 +13,7 @@ function Movies({
   foundMovies,
   filter,
   word,
+  keyWordString,
   setKeyWordString,
   onlyShorts,
   onlyShortsCheckbox,
@@ -31,6 +32,7 @@ function Movies({
         <SearchForm
           filter={filter}
           word={word}
+          keyWordString={keyWordString}
           setKeyWordString={setKeyWordString}
           onlyShorts={onlyShorts}
           onlyShortsCheckbox={onlyShortsCheckbox}

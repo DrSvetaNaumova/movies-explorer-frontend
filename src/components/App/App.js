@@ -27,7 +27,15 @@ function App() {
   const [infotoolTipData, setInfotoolTipData] = useState(null);
   const [editUserIsPossible, setEditUserIsPossible] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [searchWasDone, setSearchWasDone] = useState(false);
+
+  // проверка факта поиска фильмов
+  const [searchWasDone, setSearchWasDoneInner] = useState(
+    JSON.parse(localStorage.getItem('searchWasDone')) || false
+  );
+  const setSearchWasDone = (b) => {
+    setSearchWasDoneInner(b);
+    localStorage.setItem('searchWasDone', JSON.stringify(b))
+  };
 
   // все фильмы, они загружаются при первом поиске на странице "Фильмы"
   const [movies, setMovies] = useState(
@@ -45,9 +53,15 @@ function App() {
   const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
 
   // в этот массив записывается ключевое слово из поиска на странице "Фильмы"
-  const [keyWordString, setKeyWordString] = useState(
+  const [keyWordString, setKeyWordStringInner] = useState(
     JSON.parse(localStorage.getItem('keyWordString')) || ''
   );
+
+  const setKeyWordString = (s) => {
+    setKeyWordStringInner(s);
+    localStorage.setItem('keyWordString', JSON.stringify(s));
+  };
+
   // в этот массив записывается ключевое слово из поиска на странице "Сохраненные фильмы"
   const [savedKeyWordString, setSavedKeyWordString] = useState('');
 
@@ -188,6 +202,15 @@ function App() {
     }
   }
 
+  function filterMovies(movies, word, onlyShorts) {
+    return movies.filter(
+        (movie) =>
+          (onlyShorts ? movie.duration < MOVIE_SHORT_DURATION : true) &&
+          (movie.nameRU.toLowerCase().includes(word.toLowerCase()) ||
+           movie.nameEN.toLowerCase().includes(word.toLowerCase()))
+      );
+  }
+
   //поиск фильмов на странице "Фильмы"
   function filterFoundMovies({ word, onlyShorts }) {
     setLoading(true);
@@ -213,51 +236,15 @@ function App() {
   }
 
   function filterPrefetched(movies, word, onlyShorts) {
-    if (onlyShorts) {
-      const foundMoviesOnlyShorts = movies.filter(
-        (movie) =>
-          movie.duration < MOVIE_SHORT_DURATION &&
-          (movie.nameRU.toLowerCase().includes(word.toLowerCase()) ||
-            movie.nameEN.toLowerCase().includes(word.toLowerCase()))
-      );
-
-      localStorage.setItem(
-        'foundMoviesOnlyShorts',
-        JSON.stringify(foundMoviesOnlyShorts)
-      );
-      setFoundMovies(foundMoviesOnlyShorts);
-    } else if (!onlyShorts) {
-      const foundMovies = movies.filter(
-        (movie) =>
-          movie.nameRU.toLowerCase().includes(word.toLowerCase()) ||
-          movie.nameEN.toLowerCase().includes(word.toLowerCase())
-      );
-
-      localStorage.setItem('foundMovies', JSON.stringify(foundMovies));
-      setFoundMovies(foundMovies);
-    }
+    const foundMovies = filterMovies(movies, word, onlyShorts)
+    localStorage.setItem('foundMovies', JSON.stringify(foundMovies));
+    setFoundMovies(foundMovies);      
   }
 
   // поиск на странице "Сохраненные фильмы"
   const filterSavedMovies = useCallback(
     ({ word, savedOnlyShorts }) => {
-      if (savedOnlyShorts) {
-        const filteredSavedMoviesOnlyShorts = savedMovies.filter(
-          (movie) =>
-            movie.duration < MOVIE_SHORT_DURATION &&
-            (movie.nameRU.toLowerCase().includes(word.toLowerCase()) ||
-              movie.nameEN.toLowerCase().includes(word.toLowerCase()))
-        );
-
-        setFilteredSavedMovies(filteredSavedMoviesOnlyShorts);
-      } else if (!savedOnlyShorts) {
-        const filteredSavedMovies = savedMovies.filter(
-          (movie) =>
-            movie.nameRU.toLowerCase().includes(word.toLowerCase()) ||
-            movie.nameEN.toLowerCase().includes(word.toLowerCase())
-        );
-        setFilteredSavedMovies(filteredSavedMovies);
-      }
+      setFilteredSavedMovies(filterMovies(savedMovies, word, savedOnlyShorts))
     },
     [savedMovies]
   );
@@ -312,6 +299,7 @@ function App() {
                   movies={movies}
                   foundMovies={foundMovies}
                   savedMovies={savedMovies}
+                  keyWordString={keyWordString}
                   setKeyWordString={setKeyWordString}
                   filter={filterFoundMovies}
                   onlyShorts={onlyShorts}
@@ -332,16 +320,19 @@ function App() {
                 <ProtectedRoute
                   element={SavedMovies}
                   loggedIn={loggedIn}
-                  savedMovies={filteredSavedMovies}
+                  savedMovies={savedMovies}
                   deleteMovie={deleteMovie}
                   checkIfMovieWasSaved={checkIfMovieWasSaved}
+                  keyWordString={savedKeyWordString}
                   setKeyWordString={setSavedKeyWordString}
                   filter={filterSavedMovies}
                   onlyShorts={savedOnlyShorts}
+                  setOnlyShorts={setSavedOnlyShorts}
                   onlyShortsCheckbox={savedOnlyShortsCheckbox}
                   searchWasDone={searchWasDone}
                   setSearchWasDone={setSearchWasDone}
                   filteredSavedMovies={filteredSavedMovies}
+                  setFilteredSavedMovies={setFilteredSavedMovies}
                 />
               }
             />
@@ -362,9 +353,9 @@ function App() {
                     setKeyWordString('');
                     setFoundMovies([]);
                     setOnlyShorts(false);
-                    setSavedOnlyShorts(false)
-                    setSavedMovies([])
-                    setFilteredSavedMovies([])
+                    setSavedOnlyShorts(false);
+                    setSavedMovies([]);
+                    setFilteredSavedMovies([]);
                     setSearchWasDone(false);
                     navigate('/', { replace: true });
                   }}
@@ -381,12 +372,7 @@ function App() {
 
             <Route
               path="/signin"
-              element={
-                <Login
-                  handleLogin={handleLogin}
-                  loggedIn={loggedIn}
-                />
-              }
+              element={<Login handleLogin={handleLogin} loggedIn={loggedIn} />}
             />
 
             <Route path="*" element={<Page404 />} />

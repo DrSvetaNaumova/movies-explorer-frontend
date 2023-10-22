@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import './SavedMovies.css';
 
 import Header from '../Header/Header';
@@ -15,11 +15,21 @@ function SavedMovies({
   word,
   setKeyWordString,
   onlyShorts,
+  setOnlyShorts,
   onlyShortsCheckbox,
-  setSearchWasDone,
   searchWasDone,
-  filteredSavedMovies
+  setSearchWasDone,
+  filteredSavedMovies,
+  setFilteredSavedMovies,
 }) {
+  useEffect(() => {
+    return () => {
+      setOnlyShorts(false);
+      setSearchWasDone(false);
+      setFilteredSavedMovies(savedMovies);
+    };
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <Header loggedIn={loggedIn} headerClassName={'header'} />
@@ -29,6 +39,7 @@ function SavedMovies({
           word={word}
           setKeyWordString={setKeyWordString}
           onlyShorts={onlyShorts}
+          setOnlyShorts={setOnlyShorts}
           onlyShortsCheckbox={onlyShortsCheckbox}
           setSearchWasDone={setSearchWasDone}
         />
@@ -37,6 +48,7 @@ function SavedMovies({
           deleteMovie={deleteMovie}
           checkIfMovieWasSaved={checkIfMovieWasSaved}
           filteredSavedMovies={filteredSavedMovies}
+          setFilteredSavedMovies={setFilteredSavedMovies}
           searchWasDone={searchWasDone}
         />
       </main>

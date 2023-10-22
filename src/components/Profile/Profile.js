@@ -26,7 +26,7 @@ function Profile({
     e.preventDefault();
     editUser({ name: values.name, email: values.email });
     setEditUserIsPossible(false);
-    resetForm();
+    //resetForm();
   }
 
   if (editUserIsPossible) {
@@ -47,7 +47,7 @@ function Profile({
                     id="name"
                     name="name"
                     type="text"
-                    placeholder={currentUser.name}
+                    placeholder="Имя"
                     minLength="2"
                     maxLength="30"
                     value={values.name || ''}
@@ -72,7 +72,7 @@ function Profile({
                     id="email"
                     name="email"
                     type="text"
-                    placeholder={currentUser.email}
+                    placeholder="email"
                     value={values.email || ''}
                     onChange={handleChange}
                     pattern="^[a-zA-Z0-9\.\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z0-9]+$"
