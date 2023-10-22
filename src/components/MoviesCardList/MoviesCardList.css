@@ -33,6 +33,11 @@
   }
 }
 
+.movies__item {
+  display: flex;
+  align-self: flex-end;
+}
+
 .movies__not-found {
   align-self: center;
   color: red;

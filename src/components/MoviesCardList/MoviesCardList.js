@@ -65,7 +65,7 @@ function MoviesCardList({
         <section className="movies">
           <ul className="movies__container">
             {foundMovies.slice(0, initialMoviesNumber).map((movie) => (
-              <li key={movie.id}>
+              <li className="movies__item" key={movie.id}>
                 {' '}
                 <MoviesCard
                   movie={movie}
@@ -120,7 +120,7 @@ function MoviesCardList({
         <section className="movies">
           <ul className="movies__container">
             {savedMovies.map((movie) => (
-              <li key={movie.movieId}>
+              <li className="movies__item" key={movie.movieId}>
                 {' '}
                 <MoviesCard
                   movie={movie}
@@ -145,7 +145,7 @@ function MoviesCardList({
         <section className="movies">
           <ul className="movies__container">
             {filteredSavedMovies.map((movie) => (
-              <li key={movie.movieId}>
+              <li className="movies__item" key={movie.movieId}>
                 {' '}
                 <MoviesCard
                   movie={movie}
