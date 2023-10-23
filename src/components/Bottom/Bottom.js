@@ -1,27 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Bottom.css';
 
 import BottomButton from '../BottomButton/BottomButton';
 
-function Bottom({ type }) {
+function Bottom({ type, isInactive }) {
   return type === 'register' ? (
     <>
-      <BottomButton title={'Зарегистрироваться'} statusActive={true} />
+      <BottomButton title={'Зарегистрироваться'} isInactive={isInactive}/>
       <div className="bottom">
         <div className="bottom__question">Уже зарегистрированы?</div>
-        <a className="bottom__link" href="http://localhost:3000/signin">
+        <Link to="/signin" className="bottom__link">
           Войти
-        </a>
+        </Link>
       </div>
     </>
   ) : (
     <>
-      <BottomButton title={'Войти'} statusActive={true} />
+      <BottomButton title={'Войти'} isInactive={isInactive}/>
       <div className="bottom">
         <div className="bottom__question">Еще не зарегистрированы?</div>
-        <a className="bottom__link" href="http://localhost:3000/signup">
+        <Link to="/signup" className="bottom__link">
           Регистрация
-        </a>
+        </Link>
       </div>
     </>
   );

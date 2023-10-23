@@ -3,37 +3,3 @@
   flex-direction: column;
   flex-grow: 1;
 }
-
-.saved-movies {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.saved-movies__container {
-  list-style: none;
-  margin: 0;
-  padding: 70px 70px 100px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 270px);
-  column-gap: 20px;
-  row-gap: 37px;
-  justify-content: center;
-}
-
-@media screen and (max-width: 900px) {
-  .saved-movies__container {
-    padding: 70px 30px 206px;
-    grid-template-columns: repeat(auto-fill, 339px);
-    column-gap: 30px;
-    row-gap: 30px;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .saved-movies__container {
-    padding: 40px 10px 224px;
-    grid-template-columns: repeat(auto-fill, 300px);
-    row-gap: 34px;
-  }
-}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 import Logo from './../Logo/Logo';
@@ -8,8 +8,6 @@ import NavigationHorizontal from '../NavigationHorizontal/NavigationHorizontal';
 import NavigationVertical from '../NavigationVertical/NavigationVertical';
 
 function Header({ loggedIn, headerClassName }) {
-  const navigate = useNavigate();
-
   const [navigationVerticalIsOpen, setNavigationVerticalIsOpen] =
     useState(false);
 
@@ -45,20 +43,12 @@ function Header({ loggedIn, headerClassName }) {
         <header className={headerClassName}>
           <Logo />
           <nav className="header__authorization">
-            <a
-              href="http://localhost:3000/signup"
-              className="header__registration"
-              onClick={() => navigate('/signup')}
-            >
+            <Link to="/signup" className="header__registration">
               Регистрация
-            </a>
-            <a
-              href="http://localhost:3000/signin"
-              className="header__login"
-              onClick={() => navigate('/signin')}
-            >
+            </Link>
+            <Link to="/signin" className="header__login">
               Войти
-            </a>
+            </Link>
           </nav>
         </header>
       </>

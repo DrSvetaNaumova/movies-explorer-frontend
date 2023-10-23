@@ -47,6 +47,8 @@
 }
 
 .navigation-vertical__link_active {
+  color: #fff;
+  text-decoration: none;
   border: 0;
   border-bottom: 2px solid #fff;
   padding: 23px 0 4px;
